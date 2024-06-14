@@ -16,6 +16,7 @@ import { HiMiniXMark } from "react-icons/hi2";
 
 const Navbar = () => {
   const { data: session } = useSession();
+  console.log(session)
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
