@@ -54,7 +54,7 @@ const Form = () => {
         <span>{error}</span>
       </div>
       <button type="submit" className="w-32 h-10 p-2 bg-blue-500 text-white hover:bg-blue-600">Login</button>
-      <span>Don't have an account? <Link className="text-blue-500 hover:text-blue-600" href="/register">Register</Link>.</span>
+      <span>Don&apos;t have an account? <Link className="text-blue-500 hover:text-blue-600" href="/register">Register</Link>.</span>
     </form>
   );
 }
