@@ -9,7 +9,7 @@ const Login = async () => {
   }
 
   return (
-    <div className='h-full flex flex-col justify-center items-center text-black'>
+    <div className='h-[calc(100vh-5rem)] flex flex-col justify-center items-center text-black p-4'>
       <Form />
     </div>
   )

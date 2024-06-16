@@ -52,7 +52,7 @@ const Navbar = () => {
                 <Link href="/profile" className='hover:text-gray-600'>Profile</Link>
                 <Link href="/cart" className='hover:text-gray-600'>View cart</Link>
                 <Link href="/checkout" className='hover:text-gray-600'>Checkout</Link>
-                <button className='hover:text-gray-600' onClick={() => signOut()}>Log out</button>
+                {session?.user && <button className='hover:text-gray-600' onClick={() => signOut()}>Log out</button>}
               </PopoverContent>
             </Popover>
           </div>
