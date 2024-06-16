@@ -6,8 +6,14 @@ import { getToken } from 'next-auth/jwt';
 export async function GET(req) {
   await connectDB();
 
+  const user = await getToken({ req, secret: process.env.NEXTAUTH_SECRET }).then(token => token?.user);
+
+  if (!user?.role == 'admin') {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
-    const products = await Product.find({}).populate('categoryId');
+    const products = await Product.find({});
     const productsData = products.map(product => ({
       id: product._id,
       name: product.name,

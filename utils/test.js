@@ -52,3 +52,14 @@ export const createGroceriesCategory = async () => {
     mongoose.connection.close();
   }
 };
+
+export const setAllProductImages = async () => {
+  await connectDB();
+
+  try {
+    await Product.updateMany({}, { mainImage: 'https://www.jarir.com/cdn-cgi/image/fit=contain,width=380,height=auto,quality=85,metadata=none/https://ak-asset.jarir.com/akeneo-prod/asset/c/a/b/3/cab304332369baff7d69ae601b7ae75f6306c08c_619143.jpg' });
+    console.log('All product images updated successfully.');
+  } catch (error) {
+    console.error('Error updating product images:', error);
+  }
+}

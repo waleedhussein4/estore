@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: 'images.pexels.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.jarir.com',
+        port: '',
+      },
     ],
   },
 };

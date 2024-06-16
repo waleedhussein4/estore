@@ -58,8 +58,6 @@ const InventoryManagement = () => {
         if (data.error) {
           setError(data.error);
         } else {
-          console.log(products)
-          console.log(data)
           setProducts(products.map(p => (p.id === id ? data.product : p)));
           setFilteredProducts(products.map(p => (p.id === id ? data.product : p)));
         }
