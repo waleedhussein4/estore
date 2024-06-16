@@ -12,7 +12,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { CiMenuBurger } from "react-icons/ci";
-import { HiMiniXMark } from "react-icons/hi2";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -24,8 +23,8 @@ const Navbar = () => {
     <nav className="border-b h-20 flex flex-row justify-between items-center bg-white p-4 text-black">
       {/* Logo */}
       <div>
-        <Link href="/" onClick={() => {setMobileOpen(false)}}>
-          <Image src="/logo.png" alt="logo" width={60} height={60} />
+        <Link href="/" onClick={() => { setMobileOpen(false) }}>
+          <Image src="/logo.png" alt="logo" width={80} height={80} />
         </Link>
       </div>
 
@@ -39,6 +38,7 @@ const Navbar = () => {
         </div>
         <div className="flex flex-row gap-8">
           {session?.user?.role == "admin" && <Link href="/dashboard">Admin Dashboard</Link>}
+          <Link href='/products'>Browse</Link>
         </div>
         <div className='flex flex-row gap-6'>
           <div className='flex flex-row gap-4'>
@@ -51,9 +51,9 @@ const Navbar = () => {
               </PopoverTrigger>
               <PopoverContent className="flex flex-col p-4 justify-between items-center w-36 gap-2">
                 <Link href="/profile" className='hover:text-gray-600'>Profile</Link>
-                <Link href="/cart">View cart</Link>
-                <Link href="/checkout">Checkout</Link>
-                <button onClick={() => signOut()}>Log out</button>
+                <Link href="/cart" className='hover:text-gray-600'>View cart</Link>
+                <Link href="/checkout" className='hover:text-gray-600'>Checkout</Link>
+                <button className='hover:text-gray-600' onClick={() => signOut()}>Log out</button>
               </PopoverContent>
             </Popover>
           </div>
@@ -84,6 +84,7 @@ const Navbar = () => {
 
             <div className='flex flex-col gap-10 items-center justify-between'>
               {session?.user?.role == "admin" && <Link href="/dashboard" onClick={() => setMobileOpen(false)}>Admin Dashboard</Link>}
+              <Link href='/products' onClick={() => setMobileOpen(false)}>Browse</Link>
               {session && <Link href="/profile" onClick={() => setMobileOpen(false)}>Profile</Link>}
               <Link href="/cart" onClick={() => setMobileOpen(false)}>View cart</Link>
               {session && <Link href="/checkout" onClick={() => setMobileOpen(false)}>Checkout</Link>}
